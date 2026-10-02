@@ -21,8 +21,6 @@ body{background:var(--cream)}
 .landing-agenda .browse-tools{margin-bottom:22px}
 .landing-footer{align-items:center;padding:24px 0}
 .landing-footer strong{color:var(--ink);font:700 13px var(--font-display)}
-.landing-footer a{font-size:12px;font-weight:700}
-.landing-footer a:hover{color:var(--purple)}
 .hero-grid{min-height:455px;background:var(--purple)}
 .hero-copy{padding-top:45px;padding-bottom:45px}
 .hero h1{font-size:clamp(52px,5.2vw,78px)}
