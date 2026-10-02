@@ -7,6 +7,11 @@
   },
   "scripts": {
     "start": "node server.js",
+    "build": "node scripts/build-public.js",
     "test:hosting": "node scripts/verify-hosting.js"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
+    "@vercel/blob": "^2.8.0"
   }
 }

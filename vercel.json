@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/health", "destination": "/api/index?route=health" },
+    { "source": "/api/:route*", "destination": "/api/index?route=:route*" }
+  ]
+}

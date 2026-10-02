@@ -4,5 +4,8 @@
 uploads/
 storage/
 node_modules/
+public/
+.vercel/
+.env*
 entradas-monitor/
 *-preview.png
