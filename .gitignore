@@ -9,3 +9,5 @@ public/
 .env*
 entradas-monitor/
 *-preview.png
+.agents/
+skills-lock.json
