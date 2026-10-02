@@ -40,6 +40,7 @@ function renderHome() {
   app.innerHTML = `<section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><span class="hero-kicker">Eventos para recordar</span><h1>Hay experiencias que <em>vibran distinto.</em></h1><p>No te quedes afuera de vivirlas. Descubrí tu próximo show, elegí tu lugar y consultá tus entradas por WhatsApp.</p><div class="hero-actions"><a class="button button-lime" href="#/eventos">Descubrir eventos ${icon('arrow')}</a></div></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1600&q=90" alt="Público disfrutando de un recital"/><div class="hero-sticker"><strong>100%</strong> ganas de estar ahí</div><div class="hero-visual-caption">Tu próxima historia empieza acá</div></div></div></section>
   <div class="ticker wrap" aria-hidden="true"><span>Música en vivo</span><span>✳</span><span>Experiencias</span><span>✳</span><span>Momentos únicos</span><span>✳</span><span>Buenos planes</span></div>
   <section class="section" id="eventos"><div class="wrap"><div class="section-head"><div><span class="eyebrow">La agenda</span><h2>Encontrá tu próximo plan.</h2></div><p>Elegí una fecha y consultá únicamente los sectores disponibles para esa función.</p></div><div class="browse-tools"><div class="chips" id="category-chips" aria-label="Filtrar por categoría"></div><label class="search-box">${icon('search')}<input id="event-search" type="search" placeholder="Buscar eventos o lugares..." aria-label="Buscar eventos o lugares" /></label></div><div class="event-grid" id="event-grid"></div></div></section>
+  <section class="request-section" id="pedir-show"><div class="wrap request-panel"><div class="request-copy"><span class="request-eyebrow">Lo buscamos con vos</span><h2>¿El show que buscás no está?</h2><p>Contanos qué evento querés ver, cuántas entradas necesitás y para qué día. Mandanos tu pedido por WhatsApp y lo agendamos.</p></div><form class="request-form" id="request-show-form"><label>Evento o artista<input name="event" type="text" placeholder="¿A quién querés ver?" maxlength="100" required/></label><div class="request-form-row"><label>Cantidad de entradas<input name="quantity" type="number" min="1" max="30" value="2" required/></label><label>Día o fecha<input name="day" type="text" placeholder="Ej.: sábado 15/11" maxlength="80" required/></label></div><button class="button button-lime" type="submit">${icon('whatsapp')} Enviar pedido por WhatsApp</button></form></div></section>
   <div class="promise-band"><div class="wrap promise-inner"><span><b>✳</b> Elegí tu fecha</span><span><b>✳</b> Mirá sectores y ubicación</span><span><b>✳</b> Consultá por WhatsApp</span></div></div>
   <section class="how-section" id="como-funciona"><div class="wrap"><div class="section-head"><div><span class="eyebrow">Sin vueltas</span><h2>Tu entrada, en tres pasos.</h2></div><p>Una forma clara de encontrar tu lugar y consultar la compra.</p></div><div class="steps"><article class="step"><span class="step-number">01</span><h3>Elegí fecha</h3><p>Entrá al evento y seleccioná la función que te interesa.</p></article><article class="step"><span class="step-number">02</span><h3>Encontrá tu sector</h3><p>El plano muestra los sectores cargados para esa fecha y el stock de cada uno.</p></article><article class="step"><span class="step-number">03</span><h3>Escribinos</h3><p>WhatsApp prepara tu consulta con evento, fecha, sector y cantidad.</p></article></div></div></section>
   <div class="wrap cta-block"><div><span class="eyebrow">Estamos cerca</span><h2>¿Tenés una pregunta?</h2></div><a class="button button-lime" href="${whatsappUrl('Hola, quiero consultar por entradas y próximos eventos.')}" target="_blank" rel="noopener noreferrer">${icon('whatsapp')} Hablemos por WhatsApp</a></div>`;
@@ -53,10 +54,20 @@ function renderHome() {
     const query = search.value.trim().toLocaleLowerCase('es');
     const matching = events.filter(event => (category==='Todos'||category===event.category) && `${event.title} ${event.venue} ${event.city}`.toLocaleLowerCase('es').includes(query));
     grid.classList.toggle('single',matching.length===1);
-    grid.innerHTML = matching.length ? matching.map(eventCard).join('') : '<div class="empty-state"><h3>No encontramos ese plan</h3><p>Probá con otra búsqueda o elegí otra categoría.</p></div>';
+    grid.innerHTML = matching.length ? matching.map(eventCard).join('') : '<div class="empty-state"><h3>No encontramos ese plan</h3><p>Probá con otra búsqueda o contanos qué show querés ver.</p><a class="button button-outline" href="#/pedir-show">Pedir un show</a></div>';
   }
   chips.addEventListener('click', e => { const button=e.target.closest('[data-category]'); if(!button)return; category=button.dataset.category; chips.querySelectorAll('button').forEach(chip=>{const active=chip===button;chip.classList.toggle('active',active);chip.setAttribute('aria-pressed',active)}); updateGrid(); });
   search.addEventListener('input',updateGrid);
+  document.getElementById('request-show-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.elements.event.value.trim();
+    const quantity = Number(form.elements.quantity.value);
+    const day = form.elements.day.value.trim();
+    if (!name || !day || !Number.isInteger(quantity) || quantity < 1 || quantity > 30) return;
+    const message = `Hola, busco entradas para ${name}. Cantidad: ${quantity}. Día o fecha: ${day}. ¿Lo pueden agendar y avisarme si consiguen disponibilidad?`;
+    window.open(whatsappUrl(message), '_blank', 'noopener,noreferrer');
+  });
   updateGrid();
 }
 
@@ -154,6 +165,7 @@ function route() {
     if (event) renderDetail(event); else renderNotFound();
   } else renderHome();
   if (hash==='#/eventos') document.getElementById('eventos')?.scrollIntoView();
+  else if (hash==='#/pedir-show') document.getElementById('pedir-show')?.scrollIntoView();
   else if (hash==='#/como-funciona') document.getElementById('como-funciona')?.scrollIntoView();
   else window.scrollTo(0,0);
   document.getElementById('mobile-nav').hidden = true;

@@ -2,6 +2,8 @@
 
 La web pública muestra eventos, fechas, sectores disponibles, plano por función, ubicación y consulta de compra por WhatsApp. El panel permite crear y editar eventos, publicar o despublicar, cargar imágenes y planos, ubicar sectores sobre el plano y mantener el stock por fecha.
 
+La agenda pública oculta automáticamente las funciones cuya fecha ya pasó en Buenos Aires. Cuando un evento no tiene más fechas futuras, desaparece de la web pública, pero se conserva en el administrador. Si un show no figura, el formulario de la portada prepara una consulta por WhatsApp con evento, cantidad y día solicitado.
+
 ## Iniciar
 
 Necesitás Node.js 24 o superior. La base SQLite utiliza `node:sqlite`, incluido en Node; no hay dependencias para instalar.

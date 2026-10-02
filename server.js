@@ -2,6 +2,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { upcomingEvents } = require('./public-events');
 const CLOUD = Boolean(process.env.VERCEL);
 const { readEvents, saveEvent, removeEvent } = require(CLOUD ? './database-cloud' : './database');
 
@@ -195,7 +196,7 @@ async function handleRequest(req, res) {
     if (pathname === '/health' && req.method === 'GET') return send(res, 200, { ok:true });
     if (pathname.startsWith('/api/')) {
       if (req.method !== 'GET' && !sameOrigin(req)) return fail(res, 403, 'Origen no permitido.');
-      if (pathname === '/api/events' && req.method === 'GET') return send(res, 200, await readEvents(true));
+      if (pathname === '/api/events' && req.method === 'GET') return send(res, 200, upcomingEvents(await readEvents(true)));
       if (pathname === '/api/admin/session' && req.method === 'GET') return send(res, 200, { authenticated:authenticated(req) });
       if (pathname === '/api/admin/login' && req.method === 'POST') {
         const ip = req.socket.remoteAddress || 'unknown';
