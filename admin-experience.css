@@ -1,0 +1,13 @@
+:root{--ink:#172a31;--muted:#607179;--purple:#176c70;--purple-dark:#105256;--lime:#f6d39b;--line:#dde4e0;--paper:#f7f5ef}
+.sidebar{background:#172a31}
+.sidebar .brand-mark,.login-card .brand-mark{background:var(--purple);color:var(--lime)}
+.event-list button:hover,.event-list button.active{background:#294c51}
+.login-screen{background:radial-gradient(circle at 85% 14%,#2c7e7c 0,transparent 35%),#172a31}
+.check-row{background:#e8f3ef}
+.stat{box-shadow:0 7px 24px #172a3108}
+.admin-marker{background:var(--coral,#dc896f)}
+.admin-section-nav{position:sticky;top:0;z-index:5;display:flex;gap:7px;flex-wrap:wrap;margin:-11px -5px 27px;padding:11px 5px;border-bottom:1px solid var(--line);background:#fffefbfa;backdrop-filter:blur(12px)}
+.admin-section-nav a{padding:9px 12px;border-radius:9px;background:#edf4f0;color:var(--purple);font-size:12px;font-weight:800}
+.admin-section-nav a:hover,.admin-section-nav a:focus-visible{background:var(--purple);color:#fff}
+#event-form>.form-section{scroll-margin-top:70px}
+@media(max-width:700px){.admin-section-nav{top:0;gap:4px}.admin-section-nav a{padding:7px 9px;font-size:11px}}

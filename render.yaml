@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: vibra-eventos
+    runtime: node
+    plan: 0.5c-512mb
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    disk:
+      name: vibra-data
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 24.14.1
+      - key: HOST
+        value: 0.0.0.0
+      - key: STORAGE_DIR
+        value: /opt/render/project/src/storage
+      - key: ADMIN_PASSWORD
+        sync: false

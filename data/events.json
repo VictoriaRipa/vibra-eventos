@@ -1,0 +1,89 @@
+[
+  {
+    "id": "omar-courtz-2026",
+    "title": "Omar Courtz",
+    "category": "Música",
+    "city": "Buenos Aires",
+    "venue": "Movistar Arena",
+    "address": "Humboldt 450, CABA",
+    "mapQuery": "Movistar Arena Humboldt 450 Buenos Aires",
+    "coordinates": [
+      -34.59431,
+      -58.44808
+    ],
+    "image": "/assets/seed-a44ddc1e-cc74-4a2a-bd95-9d4751f61c25.jpg",
+    "description": "Omar Courtz llega al Movistar Arena con su gira Por Si Mañana No Estoy World Tour. Elegí una fecha y consultá los sectores que tenemos disponibles. La compra se coordina por WhatsApp y la disponibilidad final se confirma al responderte.",
+    "published": true,
+    "occurrences": [
+      {
+        "id": "omar-2026-11-30",
+        "date": "2026-11-30",
+        "time": "21:00",
+        "doors": "",
+        "mapImage": "/assets/seed-c6b249d2-e819-4144-9202-0b6a2e050fe4.png",
+        "sectors": [
+          {
+            "id": "7fb09fed-a85d-4e63-b5b3-2a8ec840f7f5",
+            "name": "Platea baja 104",
+            "quantity": 2,
+            "x": 69.4,
+            "y": 55.6
+          },
+          {
+            "id": "0395c1c9-f0bd-4fec-993b-82d4f6454bfc",
+            "name": "Platea baja 112",
+            "quantity": 2,
+            "x": 35.2,
+            "y": 26
+          }
+        ]
+      },
+      {
+        "id": "omar-2026-12-02",
+        "date": "2026-12-02",
+        "time": "21:00",
+        "doors": "",
+        "mapImage": "/assets/seed-5cb7ba2b-9207-4b4f-ab9e-8a3a52952aad.png",
+        "sectors": [
+          {
+            "id": "omar-02-116",
+            "name": "Platea baja 116",
+            "quantity": 5,
+            "x": 25,
+            "y": 56.1
+          },
+          {
+            "id": "omar-02-103",
+            "name": "Platea baja 103",
+            "quantity": 2,
+            "x": 68.9,
+            "y": 67.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3eed5ccb-7f25-4b01-827f-185e2181369a",
+    "title": "ARGENTINA VS BENIN",
+    "category": "Deportes",
+    "city": "Buenos Aires",
+    "venue": "Mas Monumental",
+    "address": "Av. Pres. Figueroa Alcorta 7597, C1424BCL Cdad. Autónoma de Buenos Aires",
+    "mapQuery": "Mas Monumental",
+    "coordinates": null,
+    "image": "https://www.readingeagle.com/wp-content/uploads/2026/09/ARGENTINA-AMISTOSOS_71983.jpg?w=862",
+    "description": "Lionel Messi se retira de la Selección Argentina. El capitán jugará el martes 6 de octubre el último amistoso de la Fecha FIFA ante Benín, en el Estadio Monumental a las 20:00hs, y le pondrá punto final a su carrera de 21 años ininterrumpidos vistiendo la camiseta albiceleste.\nNo podes perdertela",
+    "published": true,
+    "occurrences": [
+      {
+        "id": "eea49cb2-2559-47dc-94a1-692e54450ab5",
+        "date": "2026-10-06",
+        "time": "21:00",
+        "doors": "19:00",
+        "mapImage": "",
+        "sectors": []
+      }
+    ]
+  }
+]
