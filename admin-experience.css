@@ -1,6 +1,7 @@
 :root{--ink:#172a31;--muted:#607179;--purple:#176c70;--purple-dark:#105256;--lime:#f6d39b;--line:#dde4e0;--paper:#f7f5ef}
 .sidebar{background:#172a31}
 .sidebar .brand-mark,.login-card .brand-mark{background:var(--purple);color:var(--lime)}
+.brand-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-17deg)}
 .event-list button:hover,.event-list button.active{background:#294c51}
 .login-screen{background:radial-gradient(circle at 85% 14%,#2c7e7c 0,transparent 35%),#172a31}
 .check-row{background:#e8f3ef}

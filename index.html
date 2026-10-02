@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#171626" />
-    <meta name="description" content="Descubrí eventos, conocé el lugar y reservá tus entradas de forma simple por WhatsApp." />
-    <title>Vibra — Eventos que se sienten</title>
+    <meta name="description" content="Explorá la agenda de eventos y consultá tus entradas por WhatsApp." />
+    <title>Vibra — Agenda de eventos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,24 +29,23 @@
 
     <header class="site-header">
       <div class="header-inner wrap">
-        <a class="brand" href="#/" aria-label="Vibra, volver al inicio"><span class="brand-mark" aria-hidden="true">✳</span><span>vibra<span class="brand-dot">.</span></span></a>
+        <a class="brand" href="#/" aria-label="Vibra, volver al inicio"><span class="brand-mark" aria-hidden="true"><svg><use href="#icon-ticket"/></svg></span><span>vibra<span class="brand-dot">.</span></span></a>
         <nav class="desktop-nav" aria-label="Navegación principal">
-          <a href="#/eventos">Explorar eventos</a>
-          <a href="#/como-funciona">Cómo comprar</a>
+          <a href="#/eventos">Eventos</a>
+          <a href="#/pedir-show">Pedí un show</a>
         </nav>
         <a class="header-contact" href="https://wa.me/5492326434718?text=Hola%2C%20quiero%20consultar%20por%20entradas" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-whatsapp"/></svg> Hablemos <svg class="tiny-arrow"><use href="#icon-arrow-up"/></svg></a>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav"><svg><use href="#icon-menu"/></svg></button>
       </div>
       <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
-        <a href="#/eventos">Explorar eventos</a><a href="#/como-funciona">Cómo comprar</a><a href="https://wa.me/5492326434718" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+        <a href="#/eventos">Eventos</a><a href="#/pedir-show">Pedí un show</a><a href="https://wa.me/5492326434718" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
       </nav>
     </header>
 
     <main id="app" tabindex="-1"></main>
 
     <footer class="site-footer">
-      <div class="wrap footer-top"><div><a class="brand footer-brand" href="#/"><span class="brand-mark" aria-hidden="true">✳</span><span>vibra<span class="brand-dot">.</span></span></a><p>Planes que se viven.<br>Recuerdos que se quedan.</p></div><div class="footer-links"><a href="#/eventos">Eventos</a><a href="#/como-funciona">Cómo comprar</a><a href="https://wa.me/5492326434718" target="_blank" rel="noopener noreferrer">WhatsApp <svg><use href="#icon-arrow-up"/></svg></a><a href="/admin">Administrar</a></div></div>
-      <div class="wrap footer-bottom"><span>© <span id="year"></span> Vibra.</span><span>Hecho para salir de la rutina ✳</span></div>
+      <div class="wrap footer-bottom landing-footer"><span>© <span id="year"></span> Vibra.</span><strong>Que nada te impida vivir.</strong><a href="/admin">Administrar</a></div>
     </footer>
   </body>
 </html>

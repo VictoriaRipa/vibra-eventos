@@ -11,7 +11,18 @@
 body{background:var(--cream)}
 .site-header{background:rgba(247,245,239,.94);border-bottom-color:var(--line)}
 .brand-mark{border-radius:12px;background:var(--purple);color:var(--lime)}
+.brand-mark svg{width:23px;height:23px;stroke:currentColor;stroke-width:2.2;transform:rotate(-17deg)}
 .header-contact{background:var(--ink)}
+.section.landing-agenda{padding:58px 0 52px}
+.landing-intro{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:30px}
+.landing-intro h1{max-width:900px;margin:12px 0 12px;font-size:clamp(48px,5.6vw,76px);line-height:1.02;letter-spacing:-.068em}
+.landing-intro h1 em{color:var(--purple);font-style:normal}
+.landing-intro p{max-width:610px;margin:0;color:var(--muted);font-size:16px;line-height:1.55}
+.landing-agenda .browse-tools{margin-bottom:22px}
+.landing-footer{align-items:center;padding:24px 0}
+.landing-footer strong{color:var(--ink);font:700 13px var(--font-display)}
+.landing-footer a{font-size:12px;font-weight:700}
+.landing-footer a:hover{color:var(--purple)}
 .hero-grid{min-height:455px;background:var(--purple)}
 .hero-copy{padding-top:45px;padding-bottom:45px}
 .hero h1{font-size:clamp(52px,5.2vw,78px)}
@@ -110,6 +121,11 @@ body{background:var(--cream)}
   .more-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
+  .section.landing-agenda{padding:35px 0 44px}
+  .landing-intro{margin-bottom:25px}
+  .landing-intro h1{max-width:11ch;margin:11px 0 13px;font-size:clamp(42px,10.5vw,55px);line-height:1.02}
+  .landing-intro p{font-size:14px;line-height:1.55}
+  .landing-footer{align-items:flex-start;gap:9px;padding:23px 0}
   .hero{padding-top:13px}
   .hero-grid{min-height:0;border-radius:22px}
   .hero-copy{min-height:0;padding:34px 27px 36px}
